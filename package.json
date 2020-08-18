@@ -1,0 +1,11 @@
+{
+  "name": "hacker-news-next",
+  "version": "1.0.0",
+  "description": "A Hacker News clone made using Next JS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Madushan Sooriyarathne",
+  "license": "ISC"
+}
