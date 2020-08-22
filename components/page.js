@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SideBar from "./sidebar";
 
 const Page = ({ children }) => {
   return (
@@ -15,6 +16,7 @@ const Page = ({ children }) => {
         </nav>
       </header>
       <div className="page-content">{children}</div>
+      <SideBar />
       <footer className="page-footer">
         <div className="footer-note">
           Made with ❤️ by Madushan in Sri Lanka 🇱🇰. Powered by
@@ -56,8 +58,10 @@ const Page = ({ children }) => {
       <style jsx>
         {`
           .page {
+            position: relative;
             min-height: 100vh;
             max-width: 100vw;
+            overflow: hidden;
             display: grid;
             grid-template-rows: min-content 1fr min-content;
           }

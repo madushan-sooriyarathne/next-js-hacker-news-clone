@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { useContext } from "react";
+import { userDispatchContext, userContext } from "../context/store";
 
 const NewsItem = ({
   title,
@@ -10,6 +12,21 @@ const NewsItem = ({
   url,
   user,
 }) => {
+  const setUser = useContext(userDispatchContext);
+  const currentUser = useContext(userContext);
+
+  const handleClick = (event) => {
+    const el = event.target.closest(".user-name");
+
+    if (el) {
+      if (currentUser) {
+        setUser(null);
+      } else {
+        setUser(el.dataset.username);
+      }
+    }
+  };
+
   return (
     <div className="news-item">
       <div className="item-details">
@@ -19,7 +36,11 @@ const NewsItem = ({
         <p className="url">{domain}</p>
       </div>
       <p className="item-misc">
-        {points} by <span className="user-name">{user}</span> | {timeAgo} |{" "}
+        {points} by{" "}
+        <span className="user-name" data-username={user} onClick={handleClick}>
+          {user}
+        </span>{" "}
+        | {timeAgo} |{" "}
         <Link href={`/?post=${id}`}>
           <a className="link">{commentCount} Comments</a>
         </Link>
