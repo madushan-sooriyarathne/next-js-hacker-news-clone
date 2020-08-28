@@ -62,17 +62,19 @@ const SideBar = () => {
 
       <style jsx>{`
         .sidebar {
-          position: absolute;
+          position: fixed;
           top: 0;
-          left: calc(100vw - 25vw);
+          left: 75%;
+          min-width: 25vw;
           max-width: 25vw;
           min-height: 100vh;
-          height: 100%;
+          max-height: 100vh;
           padding: 10rem 5rem;
           display: flex;
           justify-content: center;
           background-color: var(--color-white);
           transition: transform 0.2s ease-in;
+          box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25);
         }
 
         .sidebar-hidden {

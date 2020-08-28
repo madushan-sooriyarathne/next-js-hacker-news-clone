@@ -1,5 +1,6 @@
 import Link from "next/link";
 import SideBar from "./sidebar";
+import Overlay from "./overlay";
 
 const Page = ({ children }) => {
   return (
@@ -16,6 +17,7 @@ const Page = ({ children }) => {
         </nav>
       </header>
       <div className="page-content">{children}</div>
+      <Overlay />
       <SideBar />
       <footer className="page-footer">
         <div className="footer-note">
