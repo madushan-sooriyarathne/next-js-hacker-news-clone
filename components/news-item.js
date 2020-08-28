@@ -41,7 +41,7 @@ const NewsItem = ({
           {user}
         </span>{" "}
         | {timeAgo} |{" "}
-        <Link href={`/?post=${id}`}>
+        <Link href={`/post?id=${id}`}>
           <a className="link">{commentCount} Comments</a>
         </Link>
       </p>
