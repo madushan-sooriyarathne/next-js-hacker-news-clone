@@ -29,7 +29,7 @@ const Index = ({ stories, router }) => {
             </Link>
           )}
 
-          <Link href={`?page=${parseInt(router.query.page) + 1}`}>
+          <Link href={`?page=${(parseInt(router.query.page) || 1) + 1}`}>
             <a className="btn">Next</a>
           </Link>
         </div>
@@ -79,8 +79,6 @@ const getServerSideProps = async ({ query }) => {
   if (query.page) {
     curPage = query.page;
   }
-
-  console.log(query);
   try {
     const res = await fetch(
       `https://node-hnapi.herokuapp.com/news?page=${curPage}`
