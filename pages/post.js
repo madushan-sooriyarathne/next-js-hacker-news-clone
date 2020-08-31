@@ -57,7 +57,9 @@ const getServerSideProps = async ({ query }) => {
   let postData;
 
   try {
-    const res = await fetch(`http://node-hnapi.herokuapp.com/item/${query.id}`);
+    const res = await fetch(
+      `https://node-hnapi.herokuapp.com/item/${query.id}`
+    );
     const data = await res.json();
 
     if (data) {

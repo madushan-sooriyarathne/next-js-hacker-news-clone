@@ -11,7 +11,7 @@ const SideBar = () => {
     const getUserData = async () => {
       try {
         const userRes = await fetch(
-          `http://node-hnapi.herokuapp.com/user/${user}`
+          `https://node-hnapi.herokuapp.com/user/${user}`
         );
         const userData = await userRes.json();
 
