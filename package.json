@@ -7,14 +7,12 @@
     "dev": "next",
     "build": "next build",
     "export": "next export",
-    "start": "next start",
-    "deploy": "cd out && now --public"
+    "start": "next start"
   },
   "author": "Madushan Sooriyarathne",
   "license": "ISC",
   "dependencies": {
     "next": "^9.5.2",
-    "now": "^19.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
