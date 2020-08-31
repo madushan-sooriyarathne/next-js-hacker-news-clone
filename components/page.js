@@ -66,10 +66,15 @@ const Page = ({ children }) => {
             overflow: hidden;
             display: grid;
             grid-template-rows: min-content 1fr min-content;
+            grid-template-columns:
+              [full-start] minmax(5rem, 10rem)
+              [content-start] 1fr [content-end] minmax(5rem, 10rem)
+              [full-end];
           }
 
           .page-header {
             grid-row: 1 / 2;
+            grid-column: full-start / full-end;
 
             display: flex;
             align-items: center;
@@ -110,7 +115,15 @@ const Page = ({ children }) => {
             transform: scale(1.05);
           }
 
+          .page-content {
+            grid-column: content-start / content-end;
+            grid-row: 2 / 3;
+          }
+
           .page-footer {
+            grid-column: full-start / full-end;
+            grid-row: 3 / -1;
+
             padding: 2rem;
 
             display: flex;
@@ -123,6 +136,7 @@ const Page = ({ children }) => {
             font-size: 1.5rem;
             font-weight: 500;
             color: white;
+            text-align: center;
           }
 
           .footer-link {
@@ -156,6 +170,24 @@ const Page = ({ children }) => {
           .social-link:hover {
             fill: var(--color-primary-light);
             transform: scale(1.05);
+          }
+
+          @media screen and (max-width: 60em) {
+            .page-footer {
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .footer-note {
+              margin-bottom: 2rem;
+            }
+          }
+
+          @media screen and (max-width: 37.5em) {
+            .page-content {
+              grid-column: full-start / full-end;
+            }
           }
         `}
       </style>

@@ -49,6 +49,12 @@ class NextHackerNewsClone extends Document {
               font-family: var(--font-primary);
               box-sizing: border-box;
             }
+
+            @media screen and (max-width: 25em) {
+              html {
+                font-size: 50%;
+              }
+            }
           `}
         </style>
       </html>

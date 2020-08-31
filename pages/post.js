@@ -35,7 +35,7 @@ const Post = ({ postData }) => {
 
       <style jsx>{`
         .post {
-          padding: 2rem 3rem;
+          padding: 5rem 0;
         }
 
         .post-details {

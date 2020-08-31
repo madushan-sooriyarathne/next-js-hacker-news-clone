@@ -21,7 +21,7 @@ const Index = ({ stories }) => {
 
         <style jsx>{`
           .content {
-            padding: 2rem 5rem;
+            padding: 5rem 2rem;
           }
         `}</style>
       </div>

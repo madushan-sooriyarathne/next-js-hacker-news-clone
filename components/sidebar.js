@@ -64,9 +64,9 @@ const SideBar = () => {
         .sidebar {
           position: fixed;
           top: 0;
-          left: 75%;
-          min-width: 25vw;
-          max-width: 25vw;
+          right: 0;
+          min-width: 50rem;
+          max-width: 55rem;
           min-height: 100vh;
           max-height: 100vh;
           padding: 10rem 5rem;

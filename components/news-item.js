@@ -31,9 +31,8 @@ const NewsItem = ({
     <div className="news-item">
       <div className="item-details">
         <a href={url} className="title">
-          {title}
+          {title} <span className="url">{domain}</span>
         </a>
-        <p className="url">{domain}</p>
       </div>
       <p className="item-misc">
         {points} by{" "}
