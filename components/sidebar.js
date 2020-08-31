@@ -26,7 +26,7 @@ const SideBar = () => {
     };
 
     getUserData();
-  });
+  }, [user]);
 
   const closeSideBar = (event) => {
     setUser(null);
