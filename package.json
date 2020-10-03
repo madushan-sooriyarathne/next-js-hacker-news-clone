@@ -4,16 +4,16 @@
   "description": "A Hacker News clone made using Next JS",
   "main": "server.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "export": "next export",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "author": "Madushan Sooriyarathne",
   "license": "ISC",
   "dependencies": {
     "next": "^9.5.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "sw-precache-webpack-plugin": "^1.0.0"
   }
 }

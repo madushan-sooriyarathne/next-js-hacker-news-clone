@@ -3,8 +3,22 @@ import NewsItem from "../components/news-item";
 import Error from "./_error";
 import Link from "next/link";
 import { withRouter } from "next/router";
+import { useEffect } from "react";
 
 const Index = ({ stories, router, responseCode }) => {
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then((registration) =>
+          console.log("Service worker registration successful!")
+        )
+        .catch((error) =>
+          console.warn(`Service worker registration failed! - ${error.message}`)
+        );
+    }
+  }, []);
+
   return (
     <Page title="N.J.H.N.C - Next JS Hacker News Clone">
       {stories.length < 1 ? (

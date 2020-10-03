@@ -24,10 +24,6 @@ class NextHackerNewsClone extends Document {
             content="black-translucent"
           />
           <meta name="msapplication-starturl" content="/" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-          />
 
           <link
             rel="icon"
