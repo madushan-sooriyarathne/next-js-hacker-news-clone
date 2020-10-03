@@ -1,7 +1,36 @@
+import { useContext } from "react";
+import { userDispatchContext, userContext } from "../context/store";
+
 const Comment = ({ user, timeAgo, content, replies }) => {
+  const setUser = useContext(userDispatchContext);
+  const selectedUser = useContext(userContext);
+
+  // NOTE: no need to check existing user here as in end-user wont be able to click a link
+  // when a currentUser is not null in context (Because of the side-bar overlay)
+  const handleUserSideBar = (event) => {
+    if (selectedUser) {
+      setUser(null);
+    } else {
+      const el = event.target.closest(".user-name");
+
+      if (el) {
+        setUser(el.dataset.username);
+      }
+    }
+  };
+
   return (
     <div className="comment-root">
-      <p className="comment-misc">{`${user} | ${timeAgo}`}</p>
+      <p className="comment-misc">
+        <span
+          className="user-name"
+          data-username={user}
+          onClick={handleUserSideBar}
+        >
+          {user}
+        </span>
+        {` | ${timeAgo}`}
+      </p>
       <p
         className="comment-content"
         dangerouslySetInnerHTML={{ __html: content }}
@@ -31,6 +60,16 @@ const Comment = ({ user, timeAgo, content, replies }) => {
           font-size: 1.4rem;
           font-weight: 500;
           color: var(--color-gray);
+        }
+
+        .user-name {
+          cursor: pointer;
+          border-bottom: 1px solid transparent;
+          transition: border-bottom 0.2s ease;
+        }
+
+        .user-name:hover {
+          border-bottom: 1px solid var(--color-gray);
         }
 
         .comment-content {

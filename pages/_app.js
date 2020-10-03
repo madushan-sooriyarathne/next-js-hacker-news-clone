@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import App from "next/app";
-// import Head from "next/head";
+import Head from "next/head";
 import Store from "../context/store";
 
 class HackerNewsClone extends App {
@@ -8,6 +8,9 @@ class HackerNewsClone extends App {
     const { Component, pageProps } = this.props;
     return (
       <div>
+        <Head>
+          <meta name="viewport" content="width=device-width" />
+        </Head>
         <Store>
           <Component {...pageProps} />
         </Store>

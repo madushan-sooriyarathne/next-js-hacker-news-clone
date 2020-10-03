@@ -1,10 +1,14 @@
 import Link from "next/link";
 import SideBar from "./sidebar";
 import Overlay from "./overlay";
+import Head from "next/head";
 
-const Page = ({ children }) => {
+const Page = ({ children, title }) => {
   return (
     <div className="page">
+      <Head>
+        <title>{title}</title>
+      </Head>
       <header className="page-header">
         <div className="header-logo">N.J.H.N.C.</div>
         <nav className="header-nav-bar">
@@ -187,6 +191,7 @@ const Page = ({ children }) => {
           @media screen and (max-width: 37.5em) {
             .page-content {
               grid-column: full-start / full-end;
+              padding: 0 2rem;
             }
           }
         `}
