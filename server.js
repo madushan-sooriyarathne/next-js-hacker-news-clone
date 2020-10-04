@@ -27,7 +27,6 @@ app.prepare().then(() => {
         // check if the file exists in the system
         try {
           if (fs.existsSync(filepath)) {
-            console.log(`${pathname} exists in the system. Sending the file`);
             res.setHeader("content-type", "text/javascript");
             fs.createReadStream(filepath).pipe(res);
             // app.serveStatic(req, res, filepath);
@@ -36,7 +35,6 @@ app.prepare().then(() => {
           console.warn(`${pathname} does not exists in ${filepath}`);
           res.status(404).send("File not found");
         }
-
         // else let next handle the requests
       } else {
         handle(req, res, parsedUrl);
